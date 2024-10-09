@@ -24,14 +24,17 @@ jobs:
       uses: actions/setup-node@v3  # Cài đặt Node.js
       with:
         node-version: '18.x'
-
+        
+    - name: Fix Jest Permissions
+      run: chmod +x ./node_modules/.bin/jest
+      
     - name: Install dependencies
       run: npm install  # Cài đặt các phụ thuộc
 
     - name: Run tests with ${{ matrix.framework }}
       run: npm run test:${{ matrix.framework }}  # Chạy Jest hoặc Jasmine
-    - name: Fix Jest Permissions
-      run: chmod +x ./node_modules/.bin/jest
+      
+
     - name: Measure time for ${{ matrix.framework }}
       run: |
         start=$(date +%s)
