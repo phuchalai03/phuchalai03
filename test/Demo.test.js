@@ -1,4 +1,4 @@
-const { createUser, isAdult, filterAdults } = require('./Demo.js');
+const { createUser, isAdult, filterAdults } = require('../src/Demo.js');
     test('Tao doi tuong nguoi dung', () => {
         const user = createUser('John', 25);
         expect(user).toEqual({ name: 'John', age: 25 });
