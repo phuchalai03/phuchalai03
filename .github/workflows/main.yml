@@ -30,7 +30,8 @@ jobs:
 
     - name: Run tests with ${{ matrix.framework }}
       run: npm run test:${{ matrix.framework }}  # Chạy Jest hoặc Jasmine
-
+    - name: Fix Jest Permissions
+      run: chmod +x ./node_modules/.bin/jest
     - name: Measure time for ${{ matrix.framework }}
       run: |
         start=$(date +%s)
