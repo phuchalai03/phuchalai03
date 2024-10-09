@@ -1,5 +1,5 @@
 // advancedDemo.test.js
-const { fetchData, sumArray } = require('../src/Demo.js');
+const { fetchData, sumArray } = require('../src/Demo2.js');
 
 // Mocking fetch API
 global.fetch = jest.fn(() =>
